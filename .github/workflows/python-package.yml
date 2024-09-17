@@ -18,6 +18,9 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+    - name: Install langchain_search1api
+      run: |
+        pip install .
     - name: Lint with flake8
       run: |
         pip install flake8
