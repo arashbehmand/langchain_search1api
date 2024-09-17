@@ -2,6 +2,10 @@
 
 This package provides LangChain tools for the [Search1API](https://www.search1api.com/) service, allowing easy integration of web search, news search, and web crawling capabilities into your LangChain applications.
 
+
+**Disclaimer:** The author of this package is not affiliated, associated, authorized, endorsed by, or in any way officially connected with Search1API, or any of its subsidiaries or its affiliates. The official Search1API website can be found at [https://www.search1api.com/](https://www.search1api.com/).
+
+
 ## Installation
 
 You can install the package using pip:
