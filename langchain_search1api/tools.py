@@ -8,6 +8,7 @@ from typing import Optional, Any, Final
 import json
 
 from pydantic import BaseModel, Field
+import os
 import requests
 from langchain.tools import BaseTool
 
@@ -49,7 +50,15 @@ class Search1APITool(BaseTool, ABC):
 
     name: str
     description: str
-    api_key: str
+    api_key: str = None
+    timeout: int = 40  # Default timeout value
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        if not self.api_key:
+            self.api_key = os.getenv("SEARCH1API_API_KEY")
+        if not self.api_key:
+            raise ValueError("API key must be provided either as a parameter or in the SEARCH1API_API_KEY environment variable")
     timeout: int = 40  # Default timeout value
     is_single_input: Final[bool] = True
 
