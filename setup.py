@@ -3,6 +3,9 @@ from setuptools import setup, find_packages
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
+with open("requirements.txt", "r", encoding="utf-8") as fh:
+    requirements = fh.read()
+
 setup(
     name="langchain-search1api",
     version="0.1.0",
@@ -27,9 +30,5 @@ setup(
         "Programming Language :: Python :: 3.12",
     ],
     python_requires=">=3.7",
-    install_requires=[
-        "langchain>=0.2.0",
-        "requests>=2.25.0",
-        "pydantic>=2.5.0",
-    ],
+    install_requires=requirements,
 )
